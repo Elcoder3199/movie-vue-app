@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;900&family=Ubuntu:wght@300;400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  background-image: linear-gradient(360deg, #363636, #353535);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.loading {
+  width: 80px;
+  height: 80px;
+  border-width: 4px;
+  border-style: solid solid dotted dotted;
+  border-color: #201515;
+  border-radius: 50%;
+  left: 50%;
+  position: absolute;
+  margin: 20px 0;
+  top: 77%;
+  animation: rotate-right 1s linear infinite;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    margin: auto;
+    height: 50px;
+    border-color: #201515;
+    border-width: 4px;
+    border-radius: 50%;
+    border-style: solid dotted;
+    animation: rotate-left 2s linear infinite;
+  }
+}
+
+
+.slide-fade-enter-active {
+    transition: all 0.3s ease-out;
+  }
+  
+  .slide-fade-leave-active {
+    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+  
+  .slide-fade-enter-from,
+  .slide-fade-leave-to {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  .fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+
+@keyframes rotate-right {
+  from {
+    rotate: 0;
+  }
+  to {
+    rotate: 1turn;
+  }
+}
+
+@keyframes rotate-left {
+  from {
+    rotate: 0;
+  }
+  to {
+    rotate: -1turn;
+  }
+}
